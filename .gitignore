@@ -1,3 +1,5 @@
 gfx/images
 node_modules
 .vscode
+
+*.bak

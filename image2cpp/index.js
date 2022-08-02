@@ -58,7 +58,7 @@ options:
 const image2cpp = require("./image2cpp");
 
 exports.convert = async function (argv) {
-    const { handleImageSelection, outputString } = await image2cpp(argv);
-    await handleImageSelection(argv.input);
-    return outputString();
+  const { handleImageSelection, outputString } = await image2cpp(argv);
+  await handleImageSelection(argv.input);
+  return outputString();
 };

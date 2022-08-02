@@ -1,18 +1,18 @@
 {
-    "name": "image-generator",
-    "version": "1.0.0",
-    "description": "Running image2cpp over header file templates",
-    "main": "seed.js",
-    "scripts": {
-        "keymap": "yarn make keymap",
-        "rebuild": "yarn make rebuild",
-        "flash": "yarn make install",
-        "reflash": "yarn make reinstall",
-        "make": "make -f build.mk"
-    },
-    "license": "MIT",
-    "private": true,
-    "dependencies": {
-        "canvas": "^2.9.3"
-    }
+  "name": "image-generator",
+  "version": "1.0.0",
+  "description": "Running image2cpp over header file templates",
+  "main": "seed.js",
+  "scripts": {
+    "make:keymap": "yarn make keymap",
+    "make:flash": "yarn make install",
+    "make:rebuild": "yarn make rebuild",
+    "make:reflash": "yarn make reinstall",
+    "make": "make -f build.mk"
+  },
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "canvas": "^2.9.3"
+  }
 }
