@@ -4,10 +4,13 @@ config := -kb ${kb} -km ${km}
 
 dir := $(shell pwd)
 
-build: 
+all: require
+
+# Commands
+build: symlink
 	qmk compile ${config}
 
-rebuild: clean images
+rebuild: symlink clean images
 	qmk compile -c ${config}
 
 install: keymap
@@ -18,6 +21,7 @@ keymap: build
 
 reinstall: rebuild install
 
+# Images Generation
 aseprite := /Applications/Aseprite.app/Contents/MacOS/aseprite
 
 img_src := ${dir}/gfx
@@ -34,7 +38,7 @@ images_rotate: images_export
 	convert ${img_export}/layer_2_raw.png -rotate 270 ${img_export}/layer_1.png
 	convert ${img_export}/layer_3_raw.png -rotate 270 ${img_export}/layer_2.png
 	convert ${img_export}/layer_4_raw.png -rotate 270 ${img_export}/layer_3.png
-	convert ${img_export}/layer_5_raw.png -rotate 270 ${img_export}/layer_4.png
+# convert ${img_export}/layer_5_raw.png -rotate 270 ${img_export}/layer_4.png
 	
 	convert ${img_export}/templeos_logo_raw.png -rotate 270 ${img_export}/templeos_logo.png
 	rm -rf ${img_export}/*.raw.png
@@ -60,3 +64,16 @@ images: images_rotate
 
 clean:
 	rm -rf ${img_export}
+
+qmk_home := $(shell qmk env | grep QMK_HOME | sed 's/QMK_HOME=//g;s/"//g')
+symlink:
+	${shell cd ${qmk_home}/keyboards/splitkb/kyria/keymaps && ln -s ${dir} ${km}}
+
+qmk_rtfm := "Follow these instructions: https://docs.qmk.fm/ to properly set up your environment."
+require:
+	@echo "Checking the programs required for the build are installed..."
+	@echo "Checking if qmk is installed..."
+	@(qmk --version >/dev/null 2>&1) || (echo "ERROR: qmk not found. ${qmk_rtfm}"; exit 1)
+	@echo "Checking if qmk is properly configured..."
+	@(qmk env | grep QMK_HOME >/dev/null 2>&1) || (echo "ERROR: qmk not configured. ${qmk_rtfm}"; exit 1)
+	@(qmk env | grep QMK_HOME | sed 's/QMK_HOME=//g;s/"//g' | sed 's/.*/"&"/' >/dev/null 2>&1) || (echo "ERROR: QMK_HOME not configured. ${qmk_rtfm}"; exit 1)

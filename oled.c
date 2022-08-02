@@ -18,7 +18,6 @@ static const char PROGMEM layer_0[] = { LAYER_0 };
 static const char PROGMEM layer_1[] = { LAYER_1 };
 static const char PROGMEM layer_2[] = { LAYER_2 };
 static const char PROGMEM layer_3[] = { LAYER_3 };
-static const char PROGMEM layer_4[] = { LAYER_4 };
 static const char PROGMEM templeos_logo[] = { TEMPLEOS_LOGO };
 
 void handle_oled(void) {
@@ -38,9 +37,6 @@ void handle_oled(void) {
                 break;
             case FUN:
                 oled_write_raw_P(layer_3, COVER_SIZE);
-                break;
-            case VIM:
-                oled_write_raw_P(layer_4, COVER_SIZE);
                 break;
             default:
                 oled_write_raw_P(templeos_logo, COVER_SIZE);

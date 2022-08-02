@@ -1,0 +1,11 @@
+version: "3.2"
+
+services:
+  cypress:
+    # the Docker image to use from https://github.com/cypress-io/cypress-docker-images
+    image: "cypress/included:6.2.1"
+    environment:
+      CYPRESS_VIDEO: false
+    working_dir: /e2e
+    volumes:
+      - ./out/cypress:/e2e

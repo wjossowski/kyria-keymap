@@ -20,30 +20,30 @@
 #define MTG(kc) MT(MOD_LGUI, kc)
 
 // Layer-Tap
-#define ENT_LSYM LT(SYM, KC_ENT)
+#define SPC_LSYM LT(SYM, KC_SPC)
 #define ENT_LNUM LT(NUM, KC_ENT)
 #define ENT_LFUN LT(FUN, KC_ENT)
-#define SCLN_LVIM LT(VIM, KC_SCLN)
 
 // Single Keys - just for less typing
 #define SPC KC_SPC
 #define BSPC KC_BSPC
 #define NA  XXXXXXX
+#define TAB KC_TAB
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [BASE] = LAYOUT(
-      KC_TAB  , KC_Q    , KC_W    , KC_E    , KC_R    , KC_T    ,                                                         KC_Y    , KC_U    , KC_I    , KC_O    , KC_P    , KC_LEAD ,
-      KC_CAPS , KC_A    , KC_S    , KC_D    , KC_F    , KC_G    ,                                                         KC_H    , KC_J    , KC_K    , KC_L    , KC_QUOT ,SCLN_LVIM,
+      MTM(TAB), KC_Q    , KC_W    , KC_E    , KC_R    , KC_T    ,                                                         KC_Y    , KC_U    , KC_I    , KC_O    , KC_P    , KC_LSFT ,
+      KC_CAPS , KC_A    , KC_S    , KC_D    , KC_F    , KC_G    ,                                                         KC_H    , KC_J    , KC_K    , KC_L    , KC_QUOT , KC_LSFT ,
       KC_LSFT , KC_Z    , KC_X    , KC_C    , KC_V    , KC_B    , XXXXXXX , XXXXXXX ,                 XXXXXXX , XXXXXXX , KC_N    , KC_M    , KC_COMM , KC_DOT  , KC_SLSH , KC_LSFT ,
-                                    XXXXXXX , KC_LCTL , MTA(SPC), MTG(SPC), ENT_LSYM,                 ENT_LNUM,MTA(BSPC),MTG(BSPC), KC_LCTL , XXXXXXX
+                                    XXXXXXX , MTC(SPC), MTA(SPC), MTG(SPC), SPC_LSYM,                 ENT_LNUM,MTA(BSPC),MTA(BSPC),MTG(BSPC), XXXXXXX
     ),
 
     [SYM] = LAYOUT(
-      KC_TILDE, KC_CIRC , KC_HASH , KC_PLUS , KC_PLUS , KC_UNDS ,                                                         KC_MINUS, KC_MINUS, KC_EQL  , KC_ASTR , KC_DLR  , _______ ,
-      _______ , KC_PERC , KC_LABK , KC_LBRC , KC_LCBR , KC_LPRN ,                                                         KC_COLN , KC_PIPE , KC_DQUO , KC_GRV  , KC_PERC , _______ ,
-      _______ , KC_0    , KC_RABK , KC_RBRC , KC_RCBR , KC_RPRN , XXXXXXX , XXXXXXX ,                 XXXXXXX , XXXXXXX , KC_SCLN , KC_BSLS , KC_QUOTE, KC_GRV  , KC_DLR  , _______ ,
+      KC_0    , KC_CIRC , KC_PERC , KC_HASH , KC_UNDS , KC_PLUS ,                                                         KC_EQL  , KC_MINUS, KC_ASTR , KC_DLR  , KC_DLR  , KC_PERC ,
+      _______ , KC_PERC , KC_LABK , KC_LBRC , KC_LCBR , KC_LPRN ,                                                         KC_COLN , KC_PIPE , KC_DQUO , KC_GRV  , KC_GRV  , _______ ,
+      _______ , XXXXXXX , KC_RABK , KC_RBRC , KC_RCBR , KC_RPRN , XXXXXXX , XXXXXXX ,                 XXXXXXX , KC_MINUS, KC_SCLN , KC_BSLS , KC_QUOTE, KC_QUES	, KC_BSLS , _______ ,
                                     XXXXXXX , _______ , _______ , _______ , _______ ,                 ENT_LFUN, _______ , _______ , _______ , XXXXXXX
     ),
 
@@ -59,82 +59,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______ , KC_MPLY , KC_F5   , KC_F6   , KC_F7   , KC_F8   ,                                                         KC_LGUI , KC_LALT , KC_LSFT , KC_LCTL , KC_MPLY , _______ ,
       _______ , KC_VOLD , KC_F9   , KC_F10  , KC_F11  , KC_F12  , XXXXXXX , XXXXXXX ,                 XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , KC_MPRV , _______ ,
                                     XXXXXXX , _______ , _______ , _______ , _______ ,                 _______ , _______ , _______ , _______ , XXXXXXX
-    ),
-
-    [VIM] = LAYOUT(
-      _______ , _______ , _______ , KC_0    , KC_CIRC , KC_HASH ,                                                         KC_ASTR , KC_DLR  , KC_DLR  , _______ , _______ , _______ ,
-      _______ , _______ , KC_LCTL , KC_LSFT , KC_LALT , KC_LGUI,                                                          _______ , _______ , _______ , _______ , _______ , _______ ,
-      _______ , _______ , _______ , _______ , _______ , KC_PERC , XXXXXXX , XXXXXXX ,                 XXXXXXX , XXXXXXX , KC_PERC , _______ , _______ , _______ , _______ , _______ ,
-                                    _______ , _______ , _______ , _______ , _______ ,                 _______ , _______ , _______ , _______ , _______
-    ),
+    )
 
 };
-
-#ifdef LEADER_ENABLE
-LEADER_EXTERNS();
-
-void edit_body(void) {
-  register_code(KC_LEFT);
-  register_code(KC_ENT);
-  unregister_code(KC_LEFT);
-  unregister_code(KC_ENT);
-}
-
-void edit_body2(void) {
-  register_code(KC_LEFT);
-  register_code(KC_LEFT);
-  register_code(KC_ENT);
-  unregister_code(KC_LEFT);
-  unregister_code(KC_LEFT);
-  unregister_code(KC_ENT);
-}
-
-void matrix_scan_user(void) {
-  LEADER_DICTIONARY() {
-    leading = false;
-    leader_end();
-
-    SEQ_ONE_KEY(KC_T) {
-      SEND_STRING("it('TODO_FILLME', () => {})"); edit_body2();
-    }
-    SEQ_TWO_KEYS(KC_A, KC_T) {
-      SEND_STRING("it('TODO_FILLME', async () => {})"); edit_body2();
-    }
-
-    SEQ_ONE_KEY(KC_D) {
-      SEND_STRING("describe('TODO_FILLME', () => {})"); edit_body2();
-    }
-
-    
-    SEQ_ONE_KEY(KC_E) {
-      SEND_STRING("export ");
-    }
-    
-    SEQ_ONE_KEY(KC_V) {
-      SEND_STRING("const newVar = ");
-    }
-
-    SEQ_ONE_KEY(KC_A) {
-      SEND_STRING("() => {}"); edit_body();
-    }
-    SEQ_TWO_KEYS(KC_A, KC_A) {
-      SEND_STRING("async () => {}"); edit_body();
-    }
-
-    SEQ_ONE_KEY(KC_C) {
-      SEND_STRING("class MyClass {}"); edit_body();
-    }
-
-    SEQ_ONE_KEY(KC_F) {
-      SEND_STRING("function () {}"); edit_body();
-    }
-    SEQ_TWO_KEYS(KC_A, KC_F) {
-      SEND_STRING("async function () {}"); edit_body();
-    }
-
-  }
-}
-#endif
 
 #ifdef OLED_ENABLE
 oled_rotation_t oled_init_user(oled_rotation_t rotation) { return OLED_ROTATION_180; }

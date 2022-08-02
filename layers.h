@@ -8,5 +8,4 @@ enum layers {
     SYM, // Symbols
     NUM, // Numeric
     FUN, // Function Keys
-    VIM // Vim Motions
 };

@@ -7,3 +7,7 @@ It is used `as a symlink` in [my qmk_firmware fork](https://github.com/wjossowsk
 
 - [Aseprite](https://www.aseprite.org/) pixelart images conversion to OLED displays
   - Adjusted [image2cpp](http://javl.github.io/image2cpp/) in build pipeline
+
+## Current Layout
+
+![]()
