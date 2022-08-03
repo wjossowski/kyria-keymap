@@ -2,10 +2,14 @@ version: "3.2"
 
 services:
   cypress:
-    # the Docker image to use from https://github.com/cypress-io/cypress-docker-images
-    image: "cypress/included:6.2.1"
+    image: "cypress/included:9.4.1"
     environment:
       CYPRESS_VIDEO: false
+      CYPRESS_baseUrl: https://config.qmk.fm/#
+      CYPRESS_VIEWPORT_WIDTH: 1920
+      CYPRESS_VIEWPORT_HEIGHT: 1080
     working_dir: /e2e
     volumes:
-      - ./out/cypress:/e2e
+      - ./cypress:/e2e
+      - ./dist:/e2e/cypress/screenshots/keymap.spec.js
+      - ./dist:/test_data

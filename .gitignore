@@ -1,7 +1,9 @@
 gfx/images
 node_modules
 .vscode
+.DS_Store
 
 *.bak
 
 kyria-keymap
+*(failed).*

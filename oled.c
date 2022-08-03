@@ -1,24 +1,20 @@
 #include <string.h>
 #include "layers.h"
 #include "oled.h"
-#include "gfx/templeos_logo.h"
+#include "gfx/templeos_logo_0.h"
 #include "gfx/layer_0.h"
 #include "gfx/layer_1.h"
 #include "gfx/layer_2.h"
 #include "gfx/layer_3.h"
-#include "gfx/layer_4.h"
 
 #define COVER_SIZE 1024
 #define WINDOW_SIZE 256
-
-//#region images
-//#endregion
 
 static const char PROGMEM layer_0[] = { LAYER_0 };
 static const char PROGMEM layer_1[] = { LAYER_1 };
 static const char PROGMEM layer_2[] = { LAYER_2 };
 static const char PROGMEM layer_3[] = { LAYER_3 };
-static const char PROGMEM templeos_logo[] = { TEMPLEOS_LOGO };
+static const char PROGMEM templeos_logo_0[] = { TEMPLEOS_LOGO_0 };
 
 void handle_oled(void) {
 
@@ -39,9 +35,9 @@ void handle_oled(void) {
                 oled_write_raw_P(layer_3, COVER_SIZE);
                 break;
             default:
-                oled_write_raw_P(templeos_logo, COVER_SIZE);
+                oled_write_raw_P(templeos_logo_0, COVER_SIZE);
         }
     } else {
-        oled_write_raw_P(templeos_logo, COVER_SIZE);
+        oled_write_raw_P(templeos_logo_0, COVER_SIZE);
     }
 }

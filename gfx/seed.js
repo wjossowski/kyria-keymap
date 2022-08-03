@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const { convert } = require("./image2cpp");
 
-const template = path.join(__dirname, "gfx", "__gfx__.h.template");
+const template = path.join(__dirname, "templates", "gfx.h.template");
 
 const [, , tag, input, width, height] = process.argv;
 
@@ -32,7 +32,7 @@ async function run() {
     .replace(/\${DATE}/, new Date().toISOString())
     .replace(/\${CONTENTS}/, adjust(contents));
 
-  fs.writeFileSync(path.join(__dirname, "gfx", `${tag.toLowerCase()}.h`), compiled);
+  fs.writeFileSync(path.join(__dirname, `${tag.toLowerCase()}.h`), compiled);
 }
 
 function adjust(contents) {
