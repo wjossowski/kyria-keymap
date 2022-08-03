@@ -1,4 +1,3 @@
-# Globals
 dir := $(shell pwd)
 qmk_home := $(shell qmk env | grep QMK_HOME | sed 's/QMK_HOME=//g;s/"//g')
 qmk_kyria_dir := ${qmk_home}/keyboards/splitkb/kyria/keymaps
@@ -6,9 +5,7 @@ qmk_kyria_dir := ${qmk_home}/keyboards/splitkb/kyria/keymaps
 kb := splitkb/kyria/rev2
 km := wjossowski
 config := -kb ${kb} -km ${km}
-# -------------------------------------------------------------------------------- #
 
-# Commands
 build: symlink
 	qmk compile ${config}
 
@@ -25,15 +22,11 @@ keymap: build
 	rm -f ${dir}/dist/*.png
 	docker-compose up --exit-code-from cypress
 
-# -------------------------------------------------------------------------------- #
-
 clean:
 	$(MAKE) clean -C gfx 
 
 images:
 	$(MAKE) images -C gfx 
-
-# -------------------------------------------------------------------------------- #
 
 qmk_rtfm := "Follow these instructions: https://docs.qmk.fm/ to properly set up your environment."
 symlink: 
