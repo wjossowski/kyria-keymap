@@ -4,11 +4,11 @@
   "description": "Running image2cpp over header file templates",
   "main": "seed.js",
   "scripts": {
-    "make:keymap": "yarn make keymap",
-    "make:flash": "yarn make install",
-    "make:rebuild": "yarn make rebuild",
-    "make:reflash": "yarn make reinstall",
-    "make": "make -f build.mk"
+    "make:build": "make build",
+    "make:flash": "make flash",
+    "make:keymap": "make keymap",
+    "make:rebuild": "make rebuild",
+    "make:reflash": "make reflash"
   },
   "license": "MIT",
   "private": true,
