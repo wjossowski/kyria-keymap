@@ -20,9 +20,8 @@
 // Lets you roll mod-tap keys
 #define IGNORE_MOD_TAP_INTERRUPT
 
-#ifdef TAP_DANCE_ENABLE
 #define TAPPING_TERM 200
-#endif
+#define TAPPING_TERM_PER_KEY
 
 #ifdef AUTO_SHIFT_ENABLE
 #define AUTO_SHIFT_TIMEOUT 150

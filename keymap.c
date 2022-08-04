@@ -34,16 +34,16 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [BASE] = LAYOUT(
-      MTM(TAB), KC_Q    , KC_W    , KC_E    , KC_R    , KC_T    ,                                                         KC_Y    , KC_U    , KC_I    , KC_O    , KC_P    , KC_LSFT ,
-      KC_CAPS , KC_A    , KC_S    , KC_D    , KC_F    , KC_G    ,                                                         KC_H    , KC_J    , KC_K    , KC_L    , KC_QUOT , KC_LSFT ,
-      KC_LSFT , KC_Z    , KC_X    , KC_C    , KC_V    , KC_B    , XXXXXXX , XXXXXXX ,                 XXXXXXX , XXXXXXX , KC_N    , KC_M    , KC_COMM , KC_DOT  , KC_SLSH , KC_LSFT ,
+      MTM(TAB), KC_Q    , KC_W    , KC_E    , KC_R    , KC_T    ,                                                         KC_Y    , KC_U    , KC_I    , KC_O    , KC_P    , MTS(TAB),
+      KC_CAPS , KC_A    , KC_S    , KC_D    , KC_F    , KC_G    ,                                                         KC_H    , KC_J    , KC_K    , KC_L    , KC_QUOT , MTS(TAB),
+      KC_LSFT , KC_Z    , KC_X    , KC_C    , KC_V    , KC_B    , XXXXXXX , XXXXXXX ,                 XXXXXXX , XXXXXXX , KC_N    , KC_M    , KC_COMM , KC_DOT  , KC_SLSH , MTC(TAB),
                                     XXXXXXX , MTC(SPC), MTA(SPC), MTG(SPC), SPC_LSYM,                 ENT_LNUM,MTA(BSPC),MTA(BSPC),MTG(BSPC), XXXXXXX
     ),
 
     [SYM] = LAYOUT(
-      KC_0    , KC_CIRC , KC_PERC , KC_HASH , KC_UNDS , KC_PLUS ,                                                         KC_EQL  , KC_MINUS, KC_ASTR , KC_DLR  , KC_DLR  , KC_PERC ,
-      _______ , KC_PERC , KC_LABK , KC_LBRC , KC_LCBR , KC_LPRN ,                                                         KC_COLN , KC_PIPE , KC_DQUO , KC_GRV  , KC_GRV  , _______ ,
-      _______ , XXXXXXX , KC_RABK , KC_RBRC , KC_RCBR , KC_RPRN , XXXXXXX , XXXXXXX ,                 XXXXXXX , KC_MINUS, KC_SCLN , KC_BSLS , KC_QUOTE, KC_QUES	, KC_BSLS , _______ ,
+      KC_0    , KC_CIRC , KC_PERC , KC_HASH , KC_PLUS , KC_UNDS ,                                                         KC_MINUS, KC_EQL  , KC_ASTR , KC_PERC , KC_DLR  , KC_DLR  ,
+      _______ , KC_PERC , KC_LABK , KC_LBRC , KC_LCBR , KC_LPRN ,                                                         KC_COLN , KC_PIPE , KC_DQUO , KC_QUES , KC_GRV  , _______ ,
+      _______ , XXXXXXX , KC_RABK , KC_RBRC , KC_RCBR , KC_RPRN , XXXXXXX , XXXXXXX ,                 XXXXXXX , XXXXXXX , KC_SCLN , KC_BSLS , KC_QUOTE, KC_QUES	, KC_BSLS , _______ ,
                                     XXXXXXX , _______ , _______ , _______ , _______ ,                 ENT_LFUN, _______ , _______ , _______ , XXXXXXX
     ),
 
@@ -61,6 +61,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                     XXXXXXX , _______ , _______ , _______ , _______ ,                 _______ , _______ , _______ , _______ , XXXXXXX
     )
 
+};
+
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case MTA(BSPC):
+        case MTG(BSPC):
+            return TAPPING_TERM - 100;
+        default:
+            return TAPPING_TERM;
+    }
 };
 
 #ifdef OLED_ENABLE
