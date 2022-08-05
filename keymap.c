@@ -43,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [SYM] = LAYOUT(
       KC_0    , KC_CIRC , KC_PERC , KC_HASH , KC_PLUS , KC_UNDS ,                                                         KC_MINUS, KC_EQL  , KC_ASTR , KC_PERC , KC_DLR  , KC_DLR  ,
       _______ , KC_PERC , KC_LABK , KC_LBRC , KC_LCBR , KC_LPRN ,                                                         KC_COLN , KC_PIPE , KC_DQUO , KC_QUES , KC_GRV  , _______ ,
-      _______ , XXXXXXX , KC_RABK , KC_RBRC , KC_RCBR , KC_RPRN , XXXXXXX , XXXXXXX ,                 XXXXXXX , XXXXXXX , KC_SCLN , KC_BSLS , KC_QUOTE, KC_QUES	, KC_BSLS , _______ ,
+      _______ , XXXXXXX , KC_RABK , KC_RBRC , KC_RCBR , KC_RPRN , XXXXXXX , XXXXXXX ,                 XXXXXXX , XXXXXXX , KC_SCLN , KC_BSLS , KC_QUOTE, KC_EXLM	, KC_BSLS , _______ ,
                                     XXXXXXX , _______ , _______ , _______ , _______ ,                 ENT_LFUN, _______ , _______ , _______ , XXXXXXX
     ),
 
