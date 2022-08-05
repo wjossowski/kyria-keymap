@@ -26,3 +26,27 @@ It is used `as a symlink`.
 ### Function Layer
 
 ![Function Layer](./dist/layer_3.png)
+
+### Definitions:
+
+#### Mod-Tap shorthands
+
+- `MTC` - **Hold**: _Control_
+- `MTS` - **Hold**: _Shift_
+- `MTA` - **Hold**: _Alt_
+- `MTG` - **Hold**: _Command_
+- `MTM` - **Hold**: _Meh_ (_Command_ + _Control_ + _Shift_)
+- `MTH` - **Hold**: _Hyper_ (_Command_ + _Control_ + _Shift_ + _Alt_)
+
+#### Layer-Tap shorthands
+
+- `SPC_LSYM` - **Tap**: _Space_ | **Hold** : Layer "Symbol"
+- `ENT_LNUM` - **Tap**: _Enter_ | **Hold** : Layer "Numbers"
+- `ENT_LFUN` - **Tap**: _Enter_ | **Hold** : Layer "Function"
+
+#### Key shorthands
+
+- `SPC` - **Tap** _Space_
+- `BSPC` - **Tap** _Backspace_
+- `TAB` - **Tap** _Tab_
+- `NA` - **Not assigned**
