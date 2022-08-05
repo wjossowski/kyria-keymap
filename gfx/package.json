@@ -3,13 +3,6 @@
   "version": "1.0.0",
   "description": "Running image2cpp over header file templates",
   "main": "seed.js",
-  "scripts": {
-    "make:build": "make build",
-    "make:flash": "make flash",
-    "make:keymap": "make keymap",
-    "make:rebuild": "make rebuild",
-    "make:reflash": "make reflash"
-  },
   "license": "MIT",
   "private": true,
   "dependencies": {
