@@ -1,16 +1,9 @@
 aseprite := /Applications/Aseprite.app/Contents/MacOS/aseprite
 
-images: 
+images: prepare
 	mkdir -p images
-	${aseprite} -b projects/layers.aseprite --all-layers --save-as images/layer_{frame}.raw.png
-	${aseprite} -b projects/templeos_logo.aseprite --all-layers --save-as images/templeos_logo_{frame}.raw.png
-
-	convert images/layer_0.raw.png -rotate 270 images/layer_0.png
-	convert images/layer_1.raw.png -rotate 270 images/layer_1.png
-	convert images/layer_2.raw.png -rotate 270 images/layer_2.png
-	convert images/layer_3.raw.png -rotate 270 images/layer_3.png
-	convert images/templeos_logo_0.raw.png -rotate 270 images/templeos_logo_0.png
-	rm -rf images/*.raw.png
+	${aseprite} -b projects/layers.aseprite --all-layers --save-as images/layer_{frame}.png
+	${aseprite} -b projects/templeos_logo.aseprite --all-layers --save-as images/templeos_logo_{frame}.png
 
 	node ./seed.js layer_0 images/layer_0.png
 	node ./seed.js layer_1 images/layer_1.png
@@ -20,3 +13,6 @@ images:
 
 clean:
 	rm -rf images
+
+prepare:
+	npm install

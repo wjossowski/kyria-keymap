@@ -67,6 +67,9 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case MTA(BSPC):
         case MTG(BSPC):
+        case SPC_LSYM:
+        case ENT_LNUM:
+        case ENT_LFUN:
             return TAPPING_TERM - 100;
         default:
             return TAPPING_TERM;
@@ -74,7 +77,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 };
 
 #ifdef OLED_ENABLE
-oled_rotation_t oled_init_user(oled_rotation_t rotation) { return OLED_ROTATION_180; }
+oled_rotation_t oled_init_user(oled_rotation_t rotation) { return OLED_ROTATION_270; }
 
 bool oled_task_user(void) {
     handle_oled(); // <-- Lib load

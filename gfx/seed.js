@@ -4,7 +4,7 @@ const { convert } = require("./image2cpp");
 
 const template = path.join(__dirname, "templates", "gfx.h.template");
 
-const [, , tag, input, width, height] = process.argv;
+const [, , tag, input, width = 64, height = 128] = process.argv;
 
 if (!tag) {
   throw new Error("Image tag (#define TAG) not specified (1st argument)");
@@ -21,8 +21,8 @@ async function run() {
     format: "plain",
     mode: "vertical1bit",
     input,
-    screenWidth: width ? +width : 128,
-    screenHeight: height ? +height * 2 : 64,
+    screenWidth: width ? +width : 64,
+    screenHeight: height ? +height : 128,
     backgroundColor: "black",
     scale: "3",
   });
