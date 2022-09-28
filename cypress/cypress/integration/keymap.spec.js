@@ -4,7 +4,9 @@ it("exports keymap", () => {
   cy.get("input[id=fileImport]").selectFile("/test_data/keymap.json", { force: true });
   cy.get("select[id=colorway-select]").select(27);
 
+  cy.wait(2000);
   cy.get("button[id=printkeymaps]").click();
+  cy.wait(2000);
   cy.get("div.layer.4")
     .not(".non-empty")
     .then(() => {

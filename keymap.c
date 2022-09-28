@@ -14,45 +14,46 @@
 #define MTM(kc) MT(MOD_LGUI | MOD_LCTL | MOD_LSFT, kc) // meh
 
 // Layer-Tap
-#define ENT_LNUM LT(NUM, KC_ENT)
-#define ENT_LFUN LT(FUN, KC_ENT)
-
 #define MTC(kc) MT(MOD_LCTL, kc)
 #define MTS(kc) MT(MOD_LSFT, kc)
 #define MTA(kc) MT(MOD_LALT, kc)
 #define MTG(kc) MT(MOD_LGUI, kc)
 
-#define ENT_LSYM LT(SYM, KC_ENT)
-#define ENT_LNUM LT(NUM, KC_ENT)
+#define SPC_SYM LT(SYM, KC_SPC)
+#define ENT_SYM LT(SYM, KC_ENT)
+#define BSPC_NUM LT(NUM, KC_BSPC)
+#define ENT_NUM LT(NUM, KC_ENT)
+#define ENT_FUN LT(FUN, KC_ENT)
 
 // Single Keys - just for less typing
 #define SPC     KC_SPC
 #define BSPC    KC_BSPC
 #define NA      XXXXXXX
 #define TAB     KC_TAB
+#define SCLN    KC_SCLN
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [BASE] = LAYOUT(
-      MTM(TAB), KC_Q    , KC_W    , KC_E    , KC_R    , KC_T    ,                                                         KC_Y    , KC_U    , KC_I    , KC_O    , KC_P    , MTM(NA) ,
-      KC_CAPS , KC_A    , KC_S    , KC_D    , KC_F    , KC_G    ,                                                         KC_H    , KC_J    , KC_K    , KC_L    , KC_QUOT , KC_LSFT ,
-      KC_LCTL , KC_Z    , KC_X    , KC_C    , KC_V    , KC_B    , XXXXXXX , XXXXXXX ,                 XXXXXXX , XXXXXXX , KC_N    , KC_M    , KC_COMM , KC_DOT  , KC_SLSH , KC_LSFT ,
-                                    KC_LSFT , KC_LSFT , MTA(SPC), MTG(SPC), ENT_LSYM,                 ENT_LNUM, KC_BSPC , KC_LALT , KC_LGUI , KC_LGUI
+      MTM(TAB), KC_Q    , KC_W    , KC_E    , KC_R    , KC_T    ,                                                         KC_Y    , KC_U    , KC_I    , KC_O    , KC_P    ,MTM(BSPC),
+      KC_CAPS , KC_A    , KC_S    , KC_D    , KC_F    , KC_G    ,                                                         KC_H    , KC_J    , KC_K    , KC_L    , KC_QUOT ,MTS(SCLN),
+      KC_LSFT , KC_Z    , KC_X    , KC_C    , KC_V    , KC_B    , XXXXXXX , XXXXXXX ,                 XXXXXXX , XXXXXXX , KC_N    , KC_M    , KC_COMM , KC_DOT  , KC_SLSH , KC_RSFT ,
+                                    KC_LCTL , KC_LALT , MTG(SPC), SPC_SYM , ENT_SYM ,                 ENT_NUM , BSPC_NUM, KC_LALT , KC_LGUI , KC_LCTL
     ),
 
     [SYM] = LAYOUT(
       KC_0    , KC_CIRC , KC_PERC , KC_HASH , KC_PLUS , KC_UNDS ,                                                         KC_MINUS, KC_EQL  , KC_ASTR , KC_PERC , KC_DLR  , KC_DLR  ,
-      _______ , KC_PERC , KC_LABK , KC_LBRC , KC_LCBR , KC_LPRN ,                                                         KC_COLN , KC_PIPE , KC_QUES,  KC_DQUO , KC_GRV  , _______ ,
+      KC_COMM , KC_PERC , KC_LABK , KC_LBRC , KC_LCBR , KC_LPRN ,                                                         KC_COLN , KC_PIPE , KC_QUES,  KC_DQUO , KC_GRV  , KC_SCLN ,
       _______ , XXXXXXX , KC_RABK , KC_RBRC , KC_RCBR , KC_RPRN , XXXXXXX , XXXXXXX ,                 XXXXXXX , XXXXXXX , KC_SCLN , KC_BSLS , KC_EXLM,  KC_QUOTE, KC_BSLS , _______ ,
-                                    _______ , _______ , _______ , _______ , _______ ,                 MO(FUN) , KC_DEL  , _______ , _______ , _______
+                                    _______ , _______ , _______ , _______ , _______ ,                 MO(FUN) , MO(FUN) , _______ , _______ , _______
     ),
 
     [NUM] = LAYOUT(
       KC_TILDE, KC_LPRN , KC_1    , KC_2    , KC_3    , KC_COMM ,                                                         MTM(NA) , MTM(NA) , MTM(NA) , MTM(NA) , MTM(NA) , _______ ,
       _______ , KC_RPRN , KC_4    , KC_5    , KC_6    , KC_DOT  ,                                                         KC_EQL  , KC_PLUS , KC_ASTR , XXXXXXX , XXXXXXX , _______ ,
       _______ , KC_0    , KC_7    , KC_8    , KC_9    , KC_0    , XXXXXXX , XXXXXXX ,                 XXXXXXX , XXXXXXX , KC_EQL  , KC_MINUS, KC_SLSH , XXXXXXX , XXXXXXX , _______ ,
-                                    _______ , _______ , _______ , _______ , MO(FUN) ,                 _______ , _______ , _______ , _______ , _______
+                                    _______ , _______ , _______ , MO(FUN) , MO(FUN) ,                 _______ , _______ , _______ , _______ , _______
     ),
 
     [FUN] = LAYOUT(
