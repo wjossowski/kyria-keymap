@@ -2,7 +2,8 @@
 
 #include "quantum.h"
 
-enum layers {
+enum layers
+{
     // Layers
     BASE = 0,
     SYM, // Symbols

@@ -19,8 +19,6 @@ reflash: rebuild flash
 
 keymap: build 
 	qmk c2json ${config} --no-cpp -o ${dir}/dist/keymap.json ${dir}/keymap.c
-	rm -f ${dir}/dist/*.png
-	docker-compose up --exit-code-from cypress
 
 clean:
 	$(MAKE) clean -C gfx 
