@@ -50,3 +50,19 @@ It is used `as a symlink`.
 - `BSPC` - **Tap** _Backspace_
 - `TAB` - **Tap** _Tab_
 - `NA` - **Not assigned**
+
+## Current build
+
+![Symbol Layer](./dist/current.jpg)
+
+## Build log
+
+2023-01-21
+
+- Soldered RGB diodes
+- Replaced switches:
+  - Previous: [Kailh Choc Low Profile Brown](https://splitkb.com/products/kailh-low-profile-choc-switches)
+  - Current: [Keychron Double Shot PBT OSA Grey](https://shelter.pl/produkt/keychron-double-shot-pbt-osa-full-set-keycap-set/?attribute_pa_kolor=szary&attribute_pa_wersja=full-set)
+- Replaced keycaps:
+  - Previous: [Kailh Choc Transparent](https://splitkb.com/collections/switches-and-keycaps/products/kailh-choc-transparent-keycaps)
+  - Current: [Gateron - G Pro 2.0](https://shelter.pl/produkt/gateron-g-pro-2-0-switch/?attribute_pa_mechanizm=red&attribute_pa_ilosc=110-szt)
