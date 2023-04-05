@@ -36,30 +36,30 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [BASE] = LAYOUT(
-      MTM(TAB), KC_Q    , KC_W    , KC_E    , KC_R    , KC_T    ,                                                         KC_Y    , KC_U    , KC_I    , KC_O    , KC_P    , MTM(NA) ,
-      KC_CAPS , KC_A    , KC_S    , KC_D    , KC_F    , KC_G    ,                                                         KC_H    , KC_J    , KC_K    , KC_L    , KC_QUOT ,MTS(SCLN),
-      KC_LCTL , KC_Z    , KC_X    , KC_C    , KC_V    , KC_B    , XXXXXXX , XXXXXXX ,                 XXXXXXX , XXXXXXX , KC_N    , KC_M    , KC_COMM , KC_DOT  , KC_SLSH , KC_RSFT ,
-                                    KC_LALT , KC_LALT , MTG(SPC), MTS(SPC), SPC_SYM ,                 MO(NUM) ,MTA(BSPC), KC_LALT , KC_LGUI , KC_LGUI
+      MTM(TAB), KC_Q    , KC_W    , KC_E    , KC_R    , KC_T    ,                                                         KC_Y    , KC_U    , KC_I    , KC_O    , KC_P    , MTM(KC_LBRC),
+      KC_CAPS , KC_A    , KC_S    , KC_D    , KC_F    , KC_G    ,                                                         KC_H    , KC_J    , KC_K    , KC_L    , KC_QUOT , MTS(SCLN),
+ MTC(KC_LBRC) , KC_Z    , KC_X    , KC_C    , KC_V    , KC_B    , XXXXXXX , XXXXXXX ,                 XXXXXXX , XXXXXXX , KC_N    , KC_M    , KC_COMM , KC_DOT  , KC_SLSH , MTC(KC_RBRC),
+                                    KC_LALT , KC_LALT , MTG(SPC), MTS(SPC), SPC_SYM ,                 MO(NUM) ,MTS(BSPC), KC_LALT , KC_LALT , KC_LGUI
     ),
 
     [SYM] = LAYOUT(
-      KC_0    , KC_CIRC , KC_PERC , KC_HASH , KC_PLUS , KC_UNDS ,                                                         KC_MINUS, KC_EQL  , KC_ASTR , KC_PERC , KC_DLR  , KC_DLR  ,
-      KC_COMM , KC_PERC , KC_LABK , KC_LBRC , KC_LCBR , KC_LPRN ,                                                         KC_COLN , KC_PIPE , KC_QUES,  KC_DQUO , KC_GRV  , KC_SCLN ,
-      _______ , XXXXXXX , KC_RABK , KC_RBRC , KC_RCBR , KC_RPRN , XXXXXXX , XXXXXXX ,                 XXXXXXX , XXXXXXX , KC_SCLN , KC_BSLS , KC_EXLM,  KC_QUOTE, KC_BSLS , _______ ,
+      KC_0    , KC_CIRC , KC_PERC , KC_HASH , KC_MINUS, KC_UNDS ,                                                         KC_UNDS , KC_PLUS , KC_ASTR , KC_PERC , KC_DLR  , KC_DLR  ,
+      KC_COMM , KC_PERC , KC_LABK , KC_AT   , KC_EXLM , KC_EQL  ,                                                         KC_COLN , KC_AMPR , KC_DQUO,  KC_GRV  , KC_GRV  , KC_SCLN ,
+      KC_LCBR , XXXXXXX , KC_RABK , _______ , KC_QUES , KC_BSLS , XXXXXXX , XXXXXXX ,                 XXXXXXX , XXXXXXX , KC_SLSH , KC_PIPE , KC_QUOT,  _______ , KC_BSLS , KC_RCBR ,
                                     _______ , _______ , _______ , _______ , _______ ,                 MO(FUN) , ENT_FUN , _______ , _______ , _______
     ),
 
     [NUM] = LAYOUT(
       KC_TILDE, KC_LPRN , KC_1    , KC_2    , KC_3    , KC_COMM ,                                                         MTM(NA) , MTM(NA) , MTM(NA) , MTM(NA) , MTM(NA) , _______ ,
       _______ , KC_RPRN , KC_4    , KC_5    , KC_6    , KC_DOT  ,                                                         KC_EQL  , KC_PLUS , KC_ASTR , XXXXXXX , XXXXXXX , _______ ,
-      _______ , KC_0    , KC_7    , KC_8    , KC_9    , KC_0    , XXXXXXX , XXXXXXX ,                 XXXXXXX , XXXXXXX , KC_EQL  , KC_MINUS, KC_SLSH , XXXXXXX , XXXXXXX , _______ ,
+      KC_LPRN , KC_0    , KC_7    , KC_8    , KC_9    , KC_0    , XXXXXXX , XXXXXXX ,                 XXXXXXX , XXXXXXX , KC_EQL  , KC_MINUS, KC_SLSH , XXXXXXX , XXXXXXX , KC_RPRN ,
                                     _______ , _______ , _______ , ENT_FUN , MO(FUN) ,                 _______ , _______ , _______ , _______ , _______
     ),
 
     [FUN] = LAYOUT(
       _______ , KC_VOLU , KC_F1   , KC_F2   , KC_F3   , KC_F4   ,                                                         XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , KC_MNXT , _______ ,
       _______ , KC_MPLY , KC_F5   , KC_F6   , KC_F7   , KC_F8   ,                                                         KC_LGUI , KC_LALT , KC_LSFT , KC_LCTL , KC_MPLY , _______ ,
-      _______ , KC_VOLD , KC_F9   , KC_F10  , KC_F11  , KC_F12  , XXXXXXX , XXXXXXX ,                 XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , KC_MPRV , _______ ,
+      KC_LABK , KC_VOLD , KC_F9   , KC_F10  , KC_F11  , KC_F12  , XXXXXXX , XXXXXXX ,                 XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , KC_MPRV , KC_RABK ,
                                     _______ , _______ , _______ , _______ , _______ ,                 _______ , _______ , _______ , _______ , _______
     )
 
