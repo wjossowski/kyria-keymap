@@ -44,22 +44,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [SYM] = LAYOUT(
       KC_0    , KC_CIRC , KC_PERC , KC_HASH , KC_MINUS, KC_UNDS ,                                                         KC_UNDS , KC_PLUS , KC_ASTR , KC_PERC , KC_DLR  , KC_DLR  ,
-      KC_COMM , KC_PERC , KC_LABK , KC_AT   , KC_EXLM , KC_EQL  ,                                                         KC_COLN , KC_AMPR , KC_DQUO,  KC_GRV  , KC_GRV  , KC_SCLN ,
-      KC_LCBR , XXXXXXX , KC_RABK , _______ , KC_QUES , KC_BSLS , XXXXXXX , XXXXXXX ,                 XXXXXXX , XXXXXXX , KC_SLSH , KC_PIPE , KC_QUOT,  _______ , KC_BSLS , KC_RCBR ,
+      KC_COMM , KC_PERC , XXXXXXX , KC_AT   , KC_EXLM , KC_EQL  ,                                                         KC_COLN , KC_AMPR , KC_DQUO,  KC_GRV  , KC_GRV  , KC_SCLN ,
+      KC_LCBR , XXXXXXX , XXXXXXX , XXXXXXX , KC_QUES , KC_BSLS , XXXXXXX , XXXXXXX ,                 XXXXXXX , XXXXXXX , KC_SLSH , KC_PIPE , KC_QUOT,  XXXXXXX , KC_BSLS , KC_RCBR ,
                                     _______ , _______ , _______ , _______ , _______ ,                 MO(FUN) , ENT_FUN , _______ , _______ , _______
     ),
 
     [NUM] = LAYOUT(
-      KC_TILDE, KC_LPRN , KC_1    , KC_2    , KC_3    , KC_COMM ,                                                         MTM(NA) , MTM(NA) , MTM(NA) , MTM(NA) , MTM(NA) , _______ ,
-      _______ , KC_RPRN , KC_4    , KC_5    , KC_6    , KC_DOT  ,                                                         KC_EQL  , KC_PLUS , KC_ASTR , XXXXXXX , XXXXXXX , _______ ,
-      KC_LPRN , KC_0    , KC_7    , KC_8    , KC_9    , KC_0    , XXXXXXX , XXXXXXX ,                 XXXXXXX , XXXXXXX , KC_EQL  , KC_MINUS, KC_SLSH , XXXXXXX , XXXXXXX , KC_RPRN ,
-                                    _______ , _______ , _______ , ENT_FUN , MO(FUN) ,                 _______ , _______ , _______ , _______ , _______
+      KC_TILDE, KC_1    , KC_2    , KC_3    , XXXXXXX , XXXXXXX ,                                                         MTM(NA) , MTM(NA) , MTM(NA) , MTM(NA) , MTM(NA) , _______ ,
+      _______ , KC_4    , KC_5    , KC_6    , XXXXXXX , KC_DOT  ,                                                         KC_EQL  , KC_PLUS , KC_ASTR , XXXXXXX , XXXXXXX , _______ ,
+      KC_LPRN , KC_7    , KC_8    , KC_9    , XXXXXXX , KC_COMM , XXXXXXX , XXXXXXX ,                 XXXXXXX , XXXXXXX , KC_EQL  , KC_MINUS, KC_SLSH , XXXXXXX , XXXXXXX , KC_RPRN ,
+                                    KC_0    , _______ , _______ , ENT_FUN , MO(FUN) ,                 _______ , _______ , _______ , _______ , _______
     ),
 
     [FUN] = LAYOUT(
-      _______ , KC_VOLU , KC_F1   , KC_F2   , KC_F3   , KC_F4   ,                                                         XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , KC_MNXT , _______ ,
-      _______ , KC_MPLY , KC_F5   , KC_F6   , KC_F7   , KC_F8   ,                                                         KC_LGUI , KC_LALT , KC_LSFT , KC_LCTL , KC_MPLY , _______ ,
-      KC_LABK , KC_VOLD , KC_F9   , KC_F10  , KC_F11  , KC_F12  , XXXXXXX , XXXXXXX ,                 XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , KC_MPRV , KC_RABK ,
+      _______ , KC_F1   , KC_F2   , KC_F3   , KC_F4   , XXXXXXX ,                                                         XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , _______ ,
+      _______ , KC_F5   , KC_F6   , KC_F7   , KC_F8   , XXXXXXX ,                                                         XXXXXXX , XXXXXXX , KC_UP   , XXXXXXX , XXXXXXX , _______ ,
+      KC_LABK , KC_F9   , KC_F10  , KC_F11  , KC_F12  , XXXXXXX , XXXXXXX , XXXXXXX ,                 XXXXXXX , XXXXXXX , XXXXXXX , KC_LEFT , KC_DOWN , KC_RIGHT, XXXXXXX , KC_RABK ,
                                     _______ , _______ , _______ , _______ , _______ ,                 _______ , _______ , _______ , _______ , _______
     )
 
