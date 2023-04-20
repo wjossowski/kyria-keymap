@@ -1,11 +1,7 @@
 #pragma once
 
 #ifdef RGBLIGHT_ENABLE
-#define RGBLIGHT_ANIMATIONS
-#define RGBLIGHT_HUE_STEP 8
-#define RGBLIGHT_SAT_STEP 8
-#define RGBLIGHT_VAL_STEP 8
-#define RGBLIGHT_LIMIT_VAL 150
+#define RGBLIGHT_LAYERS
 #endif
 
 #ifdef LEADER_ENABLE
@@ -17,7 +13,6 @@
 #define OLED_TIMEOUT 60000
 #endif
 
-// Lets you roll mod-tap keys
 #define IGNORE_MOD_TAP_INTERRUPT
 
 #define TAPPING_TERM 200

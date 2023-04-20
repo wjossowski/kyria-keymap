@@ -4,7 +4,6 @@
 
 enum layers
 {
-    // Layers
     BASE = 0,
     SYM, // Symbols
     NUM, // Numeric
