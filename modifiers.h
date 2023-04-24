@@ -12,7 +12,7 @@
 #define MTG(kc) MT(MOD_LGUI, kc)
 
 #define SPC_SYM LT(SYM, KC_SPC)
-#define BSP_NUM LT(SYM, KC_BSPC)
+#define BSP_NUM LT(NUM, KC_BSPC)
 #define ENT_NUM LT(NUM, KC_ENT)
 #define ENT_FUN LT(FUN, KC_ENT)
 
