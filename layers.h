@@ -5,7 +5,7 @@
 enum layers
 {
     BASE = 0,
-    SYM, // Symbols
     NUM, // Numeric
+    SYM, // Symbols
     FUN, // Function Keys
 };

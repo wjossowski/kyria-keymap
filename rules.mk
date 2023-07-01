@@ -8,7 +8,7 @@ RGBLIGHT_ENABLE = yes
 TAP_DANCE_ENABLE = no
 
 LEADER_ENABLE = no
-AUTO_SHIFT_ENABLE = no
+AUTO_SHIFT_ENABLE = yes
 
 # Source
 ifeq ($(strip $(ENCODER_ENABLE)), yes)

@@ -23,3 +23,8 @@
 #define TAB KC_TAB
 #define SCLN KC_SCLN
 #define LBR KC_LBRC
+#define RBR KC_RBRC
+
+#define IDE_BW C(KC_MINUS)
+#define IDE_FW S(C(KC_MINUS))
+#define JMP_APP G(KC_TILDE)
