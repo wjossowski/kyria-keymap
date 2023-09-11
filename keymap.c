@@ -18,7 +18,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [SYM] = LAYOUT(
-    KC_TILDE, XXXXXXX , XXXXXXX , KC_HASH , KC_PERC , XXXXXXX ,                                                         KC_EQL  , KC_PERC , KC_ASTR , XXXXXXX , XXXXXXX , KC_LPRN ,
+    KC_TILDE, XXXXXXX , XXXXXXX , KC_HASH , KC_PERC , KC_MINUS,                                                         KC_EQL  , KC_PERC , KC_ASTR , XXXXXXX , XXXXXXX , KC_LPRN ,
     KC_CIRC , KC_COMM , KC_AT   , KC_LPRN , KC_QUES , KC_LCBR ,                                                         KC_COLN , KC_AMPR , KC_QUOT , KC_RABK , KC_SCLN , KC_DLR  ,
     XXXXXXX , KC_GRV  , XXXXXXX , KC_RPRN , KC_EXLM , KC_RCBR , XXXXXXX , XXXXXXX ,                 XXXXXXX , XXXXXXX , KC_MINUS, KC_PIPE , KC_DQUO , XXXXXXX , KC_BSLS , KC_RPRN ,
                                   _______ , _______ , _______ , _______ , _______ ,                 MO(FUN) , ENT_FUN , _______ , _______ , _______
@@ -33,9 +33,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
   [FUN] = LAYOUT(
-    JMP_APP , KC_F1   , KC_F2   , KC_F3   , KC_F10  , XXXXXXX ,                                                         XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , KC_LABK ,
-    IDE_BW  , KC_F4   , KC_F5   , KC_F6   , KC_F11  , XXXXXXX ,                                                         XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , IDE_FW  ,
-    IDE_BW  , KC_F7   , KC_F8   , KC_F9   , KC_F12  , XXXXXXX , XXXXXXX , XXXXXXX ,                 XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , KC_RABK ,
+    JMP_APP , KC_F1   , KC_F2   , KC_F3   , KC_F10  , XXXXXXX ,                                                         XXXXXXX , KC_MUTE , KC_MPLY , XXXXXXX , XXXXXXX , KC_LABK ,
+    IDE_BW  , KC_F4   , KC_F5   , KC_F6   , KC_F11  , KC_LABK ,                                                         KC_BRIU , KC_VOLU , KC_MNXT , XXXXXXX , XXXXXXX , IDE_FW  ,
+    IDE_BW  , KC_F7   , KC_F8   , KC_F9   , KC_F12  , KC_RABK , XXXXXXX , XXXXXXX ,                 XXXXXXX , XXXXXXX , KC_BRID , KC_VOLD , KC_MPRV , XXXXXXX , XXXXXXX , KC_RABK ,
                                   _______ , _______ , _______ , _______ , _______ ,                 _______ , _______ , _______ , _______ , _______
   )
 };
